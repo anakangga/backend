@@ -5,6 +5,7 @@ from .serializers import (
     MinimizedPenggunaSerializer,
     PenggunaSerializer,
 )
+from dj_rest_auth.views import UserDetailsView
 
 
 class PenggunaViewSet(
@@ -25,3 +26,7 @@ class PenggunaViewSet(
         if request.user.pk != int(pk):
             self.serializer_class = MinimizedPenggunaSerializer
         return super().retrieve(self, request, pk=pk)
+
+
+class PenggunaDetailsView(UserDetailsView):
+    serializer_class = PenggunaSerializer
