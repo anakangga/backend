@@ -181,3 +181,13 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+CORS_ALLOW_HEADERS = (
+    "content-disposition",
+    "accept-encoding",
+    "content-type",
+    "accept",
+    "origin",
+    "authorization",
+    "access-control-allow-origin",
+)
